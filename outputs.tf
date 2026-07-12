@@ -1,3 +1,7 @@
+output "network_manager_admin_rules_id" {
+  description = "Map of id values across all network_manager_admin_rules, keyed the same as var.network_manager_admin_rules"
+  value       = { for k, v in azurerm_network_manager_admin_rule.network_manager_admin_rules : k => v.id }
+}
 output "network_manager_admin_rules_action" {
   description = "Map of action values across all network_manager_admin_rules, keyed the same as var.network_manager_admin_rules"
   value       = { for k, v in azurerm_network_manager_admin_rule.network_manager_admin_rules : k => v.action }

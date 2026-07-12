@@ -30,14 +30,14 @@ EOT
     description              = optional(string)
     destination_port_ranges  = optional(list(string))
     source_port_ranges       = optional(list(string))
-    destination = optional(object({
+    destination = optional(list(object({
       address_prefix      = string
       address_prefix_type = string
-    }))
-    source = optional(object({
+    })))
+    source = optional(list(object({
       address_prefix      = string
       address_prefix_type = string
-    }))
+    })))
   }))
 }
 
